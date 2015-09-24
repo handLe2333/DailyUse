@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta charset="utf-8">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            background: #ddd;
+        }
+        
+        .warningBox {
+            background: #222222;
+            height: 2.9rem;
+            overflow: hidden;
+            border-radius: 0.25rem;
+            line-height: 2.9rem;
+            text-align: center;
+            color: #fff;
+            font-size: 0.7rem;
+            z-index: 1002;
+        }
+        
+        .abMid {
+            position: absolute;
+            top: 0;
+            left: 2rem;
+            right: 2rem;
+            bottom: 0;
+            margin: auto;
+        }
+        
+        .fadeOut {
+            -webkit-animation: fadeOut 0.2s 1s ease-in-out;
+        }
+        
+        @-webkit-keyframes fadeOut {
+            0% {
+                opacity: 0.7;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        
+        @-ms-keyframes fadeOut {
+            0% {
+                opacity: 0.7;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        
+        @-o-keyframes fadeOut {
+            0% {
+                opacity: 0.7;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        
+        @-moz-keyframes fadeOut {
+            0% {
+                opacity: 0.7;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        
+        @keyframes fadeOut {
+            0% {
+                opacity: 0.7;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        
+        .center {
+            position: relative;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+        }
+        
+        .floatOut {
+            overflow: hidden;
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%);
+            -webkit-transform: translate(-50%);
+            text-align: center;
+            max-width: 1080px;
+            width: 100%;
+            font-size: 14px;
+            z-index: 1005;
+        }
+        
+        .floatPop {
+            background: #ffc715;
+            width: 96%;
+            z-index: 1003;
+        }
+        
+        .floatPop p {
+            color: #d11111;
+        }
+        
+        .floatPop .arrow {
+            width: 0px;
+            height: 0px;
+            border-width: 7px 12px 0;
+            border-style: solid;
+            border-color: #d11111 transparent transparent transparent;
+        }
+        
+        .floatPop .arrow1 {
+            width: 0px;
+            height: 0px;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-bottom: 8px solid #d11111;
+        }
+        
+        .floatPop .PopTit {
+            _height: 0px;
+            overflow: hidden;
+            padding: 2% 3%;
+        }
+        
+        .floatPop .con {
+            color: #323232;
+            padding: 0px 2% 3%;
+        }
+        
+        .floatBot {
+            background: #d11111;
+            width: 100%;
+            padding: 2% 0;
+            text-shadow: 0px 0px 3px #ff1311;
+            font-size: 20px;
+            font-weight: bold;
+            z-index: 1004;
+            position: relative;
+        }
+        
+        .floatBot .fff {
+            color: #fff;
+        }
+        
+        .floatBot .fff68f {
+            color: #fff68f;
+        }
+        
+        .floatBot .ffec12 {
+            color: #ffec12;
+            font-size: 25px;
+        }
+        
+        .out {
+            margin-top: 10px;
+        }
+        
+        .inner,
+        .out {
+            border: 1px solid #999;
+        }
+        
+        .inner {
+            margin-top: 10px;
+            border-color: #666;
+            width: 100px;
+            height: 100px;
+        }
+        
+        #d,
+        #c {
+            height: 100px;
+            width: 100px;
+            background: #999;
+            position: absolute;
+            top: 40%;
+            left: 40%;
+        }
+        
+        #c {
+            background: red;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-wrap ">
+        <div class="main-layer" id="mainLayer">
+            <!-- ---------------------------------light--------------------------------------- -->
+            <div class="light">
+            </div>
+            <div class="light-mask abs-lb">
+            </div>
+            <!-- ---------------------------------红包--------------------------------------- -->
+            <div class="red-packet pr">
+                <div class="packet-be abs-lt">
+                </div>
+                <div class="hand-holder abs-rt">
+                    <div class="hand fullLayer">
+                    </div>
+                </div>
+                <div class="packet-fe abs-lb">
+                    <div class="cont-board">
+                        <div class="clearfix link-holder size24 font-bold">
+                            <a class="fl" href="http://sp.jd.com/finance/mobile/active/jdjr618/html/counter.html" clstag="jr|keycount|m_zhnan_618_bbsy|jssy">模拟收益计算器&gt;</a> <a class="fr" href="http://sp.jd.com/finance/mobile/active/jdjr618/html/rule.html" clstag="jr|keycount|m_zhnan_618_bbsy|hdgz">查看规则</a>
+                        </div>
+                        <a class="block ta-c mt25 button auto" id="cofferBtn" clstag="jr|keycount|m_zhnan_618_bbsy|czxjk"></a>
+                        <div class="step ta-c">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ---------------------------------title--------------------------------------- -->
+            <div class="logo618 abs-lt">
+            </div>
+            <div class="title abs-lt pct100">
+                <div class="sub-title-2 abs-lt pct100">
+                    <div class="sub-title-img auto">
+                    </div>
+                </div>
+                <div class="main-title ta-c">
+                </div>
+                <div class="sub-title ta-c">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <iframe id="ifr"></iframe>
+</body>
+
+</html>
+<!--<script type="text/javascript" src="jkm/js/zepto.js"></script>-->
+<script type="text/javascript">
+
+        /*
+        var hu={
+            br(){
+                console.log('xxxx');
+            }
+        }
+        var wo={
+            __proto__:hu,
+            company:'zzzz',
+            work(){
+                console.log('aaaa');
+            }
+        }
+            
+        hu.br();
+        wo.br();
+
+            
+            
+        var s=new Set();
+          s.add("hello").add("goodbye").add("hello1");
+            console.log(s.size)
+           s.size=2;
+            console.log(s)
+            
+            
+            
+            
+            
+            var key = Symbol("key");
+
+          function MyClass(privateData) {
+            this[key] = privateData;
+          }
+
+          MyClass.prototype = {
+            doStuff: function() {
+              console.log(this[key])
+            }
+          };
+        var cc=new MyClass({qwe:"qwe"})
+        console.log(cc["key"])
+        */
+</script>
